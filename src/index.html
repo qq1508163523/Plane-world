@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Plane world</title>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
-<body>
+<body onload="start()">
+    <button onclick="gameStart()" style="position: absolute">start</button>
+    <div id="gameBoard">
+        <div id="score_panel">
+            <p>Score:<span id="score">0</span></p>
+        </div>
+    </div>
 
+
+<script src="static/js/script.js"></script>
+<script>
+    function start(){
+        console.log(getComputedStyle(document.getElementById("gameBoard"),null).width);
+    }
+    function gameStart(){
+        let gameBoard = document.getElementById("gameBoard");
+        gameBoard.style.display = "block";
+        planeWorld.init(10,gameBoard);
+    }
+</script>
 </body>
+
+
 </html>
